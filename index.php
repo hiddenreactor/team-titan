@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.10.25/af-2.3.7/date-1.1.0/r-2.2.9/rg-1.1.3/sc-2.0.4/sp-1.3.0/datatables.min.css"/>
 
  
-  <title>Team Titan Statistic!!</title>
+  <title>Team Titan Statistic</title>
   <style type="text/css">
     .btnAdd {
       text-align: right;
@@ -102,7 +102,7 @@ input:checked + .slider .off
 <body>
   <div class="container-fluid" style="width=800px">
     <h2 class="text-center">Team Titan</h2>
-    <p class="datatable design text-center">On Floor Player</p>
+    <p class="datatable design text-center">On Floor Player!!</p>
     <div class="row">
       <div class="container">
         <div class="btnAdd">
