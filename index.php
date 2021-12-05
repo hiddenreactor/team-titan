@@ -114,7 +114,7 @@ input:checked + .slider .off
          <table id="example" class="table">
           <thead>
             <th width="50px">Id</th>
-            <th width="800px">Playersdgsdg</th>
+            <th width="800px">Players</th>
             <th width="50px" style="border-right:none;">Action</th>
             <th width="50px" style="border-right:none;"></th>
           </thead>
