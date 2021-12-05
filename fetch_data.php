@@ -20,7 +20,7 @@ if(isset($_POST['order']))
 }
 else
 {
-	$sql .= " ORDER BY playerID ";
+	$sql .= " ORDER BY playerID ASC";
 }
 
 if($_POST['length'] != -1)
