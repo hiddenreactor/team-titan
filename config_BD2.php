@@ -4,9 +4,9 @@ class db{
 	var $con;
 	function __construct(){
 		//$this->$con=mysqli_connect("localhost","root","") or die(mysqli_error());
-		$this->$con=mysqli_connect("us-cdbr-east-04.cleardb.com", "ba932adfb213b7", "7ee70427", "heroku_573ed5910b2ee50") or die(mysqli_error());
+		$this->$con=mysqli_connect("us-cdbr-east-04.cleardb.com", "ba932adfb213b7", "7ee70427") or die(mysqli_error());
 		// mysqli_select_db($this->$con,"mydb") or die(mysqli_error());
-		mysqli_select_db($this->$con,"titan") or die(mysqli_error());
+		mysqli_select_db($this->$con,"heroku_573ed5910b2ee50") or die(mysqli_error());
 	}
 
 	public function getGame(){
