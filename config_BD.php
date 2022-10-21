@@ -1,9 +1,9 @@
 <?php
 
-$host = "localhost"; /* Host name */
-$user = "root"; /* User */
-$password = ""; /* Password */
-$dbname = "titan"; /* Database name */
+$host = "us-cdbr-east-04.cleardb.com"; /* Host name */
+$user = "ba932adfb213b7"; /* User */
+$password = "7ee70427"; /* Password */
+$dbname = "heroku_573ed5910b2ee50"; /* Database name */
 
 $con = mysqli_connect($host, $user, $password,$dbname);
 // Check connection
