@@ -7,6 +7,7 @@ class db{
 		$this->$con=mysqli_connect("us-cdbr-east-04.cleardb.com", "b4a111629544d9", "059962b1") or die(mysqli_error());
 		// mysqli_select_db($this->$con,"mydb") or die(mysqli_error());
 		mysqli_select_db($this->$con,"heroku_22c64d3e4214282") or die(mysqli_error());
+		
 	}
 
 	public function getGame(){
