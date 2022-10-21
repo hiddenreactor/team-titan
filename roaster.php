@@ -1,7 +1,7 @@
 <?php
 
 //index.php
-$page='index';
+$page='roaster';
 require_once('includes/header.php');
 include('statConn.php');
 
@@ -54,9 +54,15 @@ include('statConn.php');
   <body>
 
     <div class="container">
-    <br />
-      <h3 align="center">Game Status</h3>
-      <br />
+    <h3 align="center">Edit Team Titan Roaster</h3>
+        <br />
+        <h4 align="center">add teamID to players table, </h4>
+        <br />
+        <div class="table-responsive">
+            <div align="right">
+                <button type="button" name="age" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success">Add</button>
+            </div>
+            <br />
       <!-- <h4 align="center">Insert players to upcoming game</h4>
       <br />
       
@@ -86,24 +92,23 @@ include('statConn.php');
     <table id="user_data" class="table table-bordered table-striped">
      <thead>
       <tr>
-       <th>Verse</th>
-       <th>Game Date</th>
-       <th>Final</th>
-       <th>Status</th>
-       <th width="8%" style="border-right:none;">Action</th>
-       <th width="8%" style="border-right:none;"></th>
+        <th width="25%" style="text-align: center;">Player</th>
+        <th width="25%" style="text-align: center;">Team</th>
+        <th width="25%" style="text-align: center;">Group</th>
+        <th width="25%" style="text-align: center;">Year</th>
+        <th width="10%" style="text-align: center;">Action</th>
        <p id="msg" style="display:none">Saved</p>
       </tr>
      </thead>
     </table>
    </div>
     </div>
-    
+    </div>
   </body>
   </html>  
 <?php
-include('modal/updatemodal.php');
-?>  
+include('modal/roasterModal.php');
+?> 
 <script>
     $(document).ready(function(){
 
@@ -116,20 +121,66 @@ include('modal/updatemodal.php');
     "serverSide" : true,
     "order" : [],
     "ajax" : {
-     url:"gameFetch.php",
+     url:"roasterFetch.php",
      type:"POST"
     }
    });
   }
       
-      
-      
+            
     });
 
 </script>
 
+<script>
+    $(document).ready(function() {
+        $('#insert_form').on("submit", function(event) {
+            event.preventDefault();
+            if ($('#playerName').val() == "") {
+                alert("Name is required");
+            } else {
+                $.ajax({
+                    url: "insert.php",
+
+                   method: "POST",
+                    data: $('#insert_form').serialize(),
+                    beforeSend: function() {
+                        $('#insert').val("Inserting");
+                    },
+                    success: function(data) {
+                        $('#insert_form')[0].reset();
+                        $('#add_data_Modal').modal('hide');
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+                $(document).on('click', '.delete', function(){
+  var playerID = $(this).attr("id");
+//   alert(playerID);
+  if(confirm("Are you sure you want to delete this?"))
+  {
+   $.ajax({
+    url:"select.php",
+    method:"POST",
+    data:{playerID:playerID},
+    success:function(data)
+    {
+     alert(data);
+     window.location.reload();
+    }
+   });
+  }
+  else
+  {
+   return false; 
+  }
+ });
+    });
+</script>
+
 <!-- //Activate Update Modal -->
-<script type="text/javascript" language="javascript" >
+<!-- <script type="text/javascript" language="javascript" >
 $(document).on('click', '.update_game', function(){ 
       let user_id = $(this).attr("id"); 
       // alert (user_id); 
@@ -178,4 +229,4 @@ var user_id = $(this).attr("id");
   }
  });
 });
-</script>
+</script> -->
