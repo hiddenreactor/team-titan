@@ -1,7 +1,8 @@
 <?php 
 //  include "config_BD.php"; 
 
-$connect = mysqli_connect("localhost", "root", "", "titan");
+// $connect = mysqli_connect("localhost", "root", "", "titan");
+$connect = mysqli_connect("us-cdbr-east-04.cleardb.com", "b4a111629544d9", "059962b1", "heroku_22c64d3e4214282");
 if (!empty($_POST)) {
     $output = '';
     $team = mysqli_real_escape_string($connect, $_POST["team"]);
