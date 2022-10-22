@@ -343,7 +343,7 @@ $(document).ready(function () {
         var newVal = oldValue;
       } else {
         var newVal = oldValue + 1;
-        // alert (id);
+        alert (id);
         // alert (split_id);
         // alert ("field = " + field_name1);
         // alert ("id = " + edit_id1);
@@ -443,7 +443,7 @@ $(document).ready(function () {
   var field_name1 = split_id[0];
   var edit_id1 = split_id[1];
   var inputValue =$(this).prevAll("input[type=text]").val();
-  // alert (id);
+  alert (id);
   // alert (split_id);
   // alert ("field = " + field_name1);
   // alert ("id = " + edit_id1);
