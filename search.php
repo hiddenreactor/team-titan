@@ -245,7 +245,7 @@ input[type=number] {
       $date = $row1['gamedate'];
 ?>
 
-<h3 align="center"> Update player for team <?php echo $team; ?> for game on <?php echo $date; ?></h3>
+<h3 align="center"> Team Titan verse <?php echo $team; ?> on <?php echo $date; ?></h3>
 
 <table width='100%' border='0'>
 			<tr>
