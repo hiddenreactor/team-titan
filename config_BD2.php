@@ -16,7 +16,7 @@ class db{
 		return $result;
 	}
 	public function getDesignation($department){
-		$query="SELECT * from gamestat where teamID=".$department." ORDER BY gamestat.gameID ASC";
+		$query="SELECT * from gamestat where teamID=".$department." ORDER BY gamestat.gameID DESC";
 		$result=mysqli_query($this->$con,$query);
 		return $result;
 	}
