@@ -38,7 +38,7 @@ $page='stat';
 	  <div class="col-sm-2" >     
 					
 						<select name="department" class="form-control" id="depart_dropdown">
-							<option>Select Team</option>
+							<option>Select Verse Team</option>
 							<?php
 								require('config.php');
 								$db = new db;
