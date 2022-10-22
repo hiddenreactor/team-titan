@@ -80,8 +80,8 @@ function fill_game($connect)          // Make this to display the latest game ON
             <thead>
               <tr>
                 <th width="1%"></th>
-                <th width="20%">Group</th>
-                <th width="20%">Team</th>
+<!--                 <th width="20%">Group</th>
+                <th width="20%">Team</th> -->
                 <th width="20%">Player Name</th>
                 <th width="20%">Verse</th>
                 <th width="10%">Game Date</th>
@@ -130,9 +130,10 @@ include('modal/updatemodal.php');
         var html = '';
         html += '<tr>';
         html += '<td><input type="hidden" name="gameID[]" class="form-control gameID" value="<?php echo fill_game($connect); ?>"/></td>';
-        html += '<td><select name="groupsec[]" id="groupsec" class="form-control groupsec" onchange="FetchTeam(this.value)"  required><option value="">Select Group</option><?php echo fill_group($connect); ?></select></td>';
-        html += '<td><select name="team[]" id="team" class="form-control team" onchange="FetchPlayer(this.value)"  required><option value="">Select Team</option></select></td>';
-        html += '<td><select name="playername[]" id="playername" class="form-control playername"><option value="">Select player</option></select></td>';
+//         html += '<td><select name="groupsec[]" id="groupsec" class="form-control groupsec" onchange="FetchTeam(this.value)"  required><option value="">Select Group</option><?php echo fill_group($connect); ?></select></td>';
+//         html += '<td><select name="team[]" id="team" class="form-control team" onchange="FetchPlayer(this.value)"  required><option value="">Select Team</option></select></td>';
+//         html += '<td><select name="playername[]" id="playername" class="form-control playername"><option value="">Select player</option></select></td>';
+        html += '<td><select name="playername[]" id="playername" class="form-control playername"><option value="">Select player</option><?php echo fill_player($connect); ?></select></td>'; 
         html += '<td><select name="verse[]" class="form-control verse"><option value="">Select Team</option><?php echo fill_team($connect); ?></select></td>';
         html += '<td><input type="date" name="gamedate[]" class="form-control gamedate" /></td>';        
         html += '<td><button type="button" name="remove" class="btn btn-danger btn-xs remove">Remove</button></td>';
@@ -157,7 +158,7 @@ include('modal/updatemodal.php');
           count = count + 1;
         });
 
-        $('.gameIDs').each(function(){
+        $('.gameID').each(function(){
           var count = 1;
           if($(this).val() == '')
           {
