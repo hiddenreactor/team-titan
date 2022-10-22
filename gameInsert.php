@@ -11,7 +11,7 @@ if(isset($_POST["playername"]))
  {
   $data = array(
    ':playername'   => $_POST["playername"][$count],
-   ':verse'   => $_POST["gameID"][$count] + 1,                           //this is WRONG, it should be insert gameID not verseID
+   ':verse'   => $_POST["gameID"][$count],                           //this is WRONG, it should be insert gameID not verseID
    ':point' => 0,
    ':rb' => 0,
    ':assist' => 0,
