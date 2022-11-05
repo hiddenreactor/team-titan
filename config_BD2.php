@@ -22,7 +22,7 @@ class db{
 	}
 	public function getAllEmployee(){
 		// $query="SELECT e.emp_id ,e.name ,e.phone ,e.email ,e.emp_address ,d.desig_name from employee AS e,designation_master AS d where e.desig_id=d.desig_id ";
-		$query="SELECT players.playerID, players.playerName, team.team, gamestat.gamedate, playerstat.gameID, playerstat.point, playerstat.rb, playerstat.assist, playerstat.blk,playerstat.onfloor FROM team
+		$query="SELECT players.playerID, players.playerName, team.team, gamestat.gamedate, playerstat.gameID, playerstat.point, playerstat.rb, playerstat.assist, playerstat.blk,playerstat.steal FROM team
 		INNER JOIN gamestat ON gamestat.teamID = team.teamID
 		INNER JOIN playerstat ON gamestat.gameID = playerstat.gameID
 		INNER JOIN players on playerstat.playerID = players.playerID 
@@ -41,7 +41,7 @@ class db{
 	// 	return $result;
 	// }
 	public function getEmployee($designation){
-		$query="SELECT players.playerID, players.playerName, team.team, gamestat.gamedate, playerstat.gameID, playerstat.statID, playerstat.point, playerstat.rb, playerstat.assist, playerstat.blk,playerstat.onfloor,playerstat.playtime FROM team
+		$query="SELECT players.playerID, players.playerName, team.team, gamestat.gamedate, playerstat.gameID, playerstat.statID, playerstat.point, playerstat.rb, playerstat.assist, playerstat.blk,playerstat.steal,playerstat.playtime FROM team
 		INNER JOIN gamestat ON gamestat.teamID = team.teamID
 		INNER JOIN playerstat ON gamestat.gameID = playerstat.gameID
 		INNER JOIN players on playerstat.playerID = players.playerID
