@@ -5,111 +5,6 @@ include "config_BD.php";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"></script>
 
-<!-- <script type="text/javascript">
-	console.log("Thank You Jesus!");
-
-$(document).ready(function() {
-
-  /* alert("ready");//Thank You Saviour */
-  var minusButton = $(".spinnerMinus"); //to aquire all minus buttons
-  var plusButton = $(".spinnerPlus"); //to aquire all plus buttons
-
-  //Handle click
-  minusButton.click(function() {
-    trigger_Spinner($(this), "-", {
-      max: 999999,
-      min: 0
-    }); //Triggers the Spinner Actuator
-  }); /*end Handle Minus Button click*/
-
-  plusButton.click(function() {
-    trigger_Spinner($(this), "+", {
-      max: 999999,
-      min: 0
-    }); //Triggers the Spinner Actuator    
-  }); /*end Handle Plus Button Click*/
-
-});
-
-
-//This function will take the clicked button and actuate the spinner based on the provided function/operator
-// - this allows you to adjust the limits of specific spinners based on classnames
-function trigger_Spinner(clickedButton, plus_minus, limits) {
-
-  var valueElement = clickedButton.closest('.customSpinner').find('.spinnerVal'); //gets the closest value element to this button
-  var controllerbuttons = {
-    minus: clickedButton.closest('.customSpinner').find('.spinnerMinus'),
-    plus: clickedButton.closest('.customSpinner').find('.spinnerPlus')
-  }; //to get the button pair associated only with this set of input controls//THank You Jesus!
-
-  //Activate Spinner
-  updateSpinner(limits, plus_minus, valueElement, controllerbuttons); //to update the Spinner
- 
-}
-
-
-/*
-	max - maxValue
-  min - minValue
-  operator - +/-
-  elem - the element that will be used to update the count
-*/ //Thank You Jesus!
-function updateSpinner(limits, operator, elem, buttons) {
-
-  var currentVal = parseInt(elem.val()); //get the current val
-
-  // alert (currentVal);
-
-  //Operate on value -----------------
-  if (operator == "+") {
-    currentVal += 1; //Increment by one  
-    //Thank You Jesus ----------------
-    if (currentVal <= limits.max) {
-      elem.val(currentVal);
-    }
-  } else if (operator == "-") {
-    currentVal -= 1; //Decrement by one
-    //Thank You Jesus ----------------
-    if (currentVal >= limits.min) {
-      elem.val(currentVal);
-    }
-  }
-  
-
-  //Independent Controllers - Handle Buttons disable toggle ------------------------
-  buttons.plus.prop('disabled', (currentVal >= limits.max)); //enable/disable button
-  buttons.minus.prop('disabled', (currentVal <= limits.min)); //enable/disable button  
-
-}
-</script>	 -->
-
-<!-- <style>
-.spinnerVal {
-  text-align: center;
-  background-color: yellow !important;
-}
-
-.customSpinner {
-  display: flex;
-  margin-bottom: 10px;
-  border-style: solid;
-  border-color: red;
-}
-
-
-/*Apply individual Styles to one*/
-
-.spinner-roundVal {
-  margin: auto 2px;
-  border-radius: 10px !important;
-  width: 20px !important;
-}
-
-.spinner-roundbutton {
-  border-radius: 10px !important;
-}
-</style> -->
-
 <style>
 .quantity {
   position: relative;
@@ -136,9 +31,9 @@ input[type=number] {
   padding-left: 20px;
   border: none;
   /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08); */
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   /* border-radius: 4px; */
-  background: lightyellow;
+  background: white;
   padding-left: 15px;
 }
 
@@ -184,18 +79,23 @@ input[type=number] {
   left: 25px;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.08); */
   font-family: "FontAwesome";
+  font-size: 2rem;
+  font-weight: 1rem;
+  color: white;
   border-radius: 0 4px 4px 0;
   /* line-height: 1.6 */
-  background: #E0FFFF;
+  background: #a9ba9d ;
 }
 
 .quantity-button.quantity-down {
   position: absolute;  
   right: 20px;
   height: 100%;
+  font-size: 2rem;
+  font-weight: 1rem;
   font-family: "FontAwesome";
   border-radius: 4px 0 0 4px;
-  background: #FFEEEE;
+  background: #ffe4e1 ;
 }
 </style>
 
@@ -331,22 +231,14 @@ input[type=number] {
         .highlight:hover {
             text-decoration: none;
         }
+        input[type="number"]
+{
+    background: transparent;
+    border: none;
+}
 	</style>
 
-<head>
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- -->
 
-  <!-- <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
-		<script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.6.5/timer.jquery.min.js'></script>
-	<script src='js/timer.jquery/timer.jquery.js'></script> -->
-  
-</head>
 
 <!-- <div class="table-repsonsive" id='employee_div'></div> -->
 <div class="table table-striped table-responsive" id='employee_div'></div>
@@ -354,19 +246,19 @@ input[type=number] {
               <table width='100%' border='0'>
               <tr>
                   <th style="display:none;">Game ID</th>
-                  <th style="display:none;">Player ID4</th>
-                  <th>Player</th>
+                  <th style="display:none;"> Player ID4</th>
+                  <th> &nbsp;Player</th>
                   <th>Verse Team</th>
-                  <th>Point</th>
+                  <th>&nbsp;Point</th> 
+                  <th>&nbsp;Assist</th>                 
+                  <th>&nbsp;Steal</th>
                   <th>Rebound</th>
-                  <th>Assist</th>
-                  <th>Block</th>
-                  <th>On Floor</th>
-                  <th>Play Time</th>
+                  <th>&nbsp;Block</th>
+                  <!-- <th>Play Time</th> -->
               </tr>
               <?php 
                   // $query = "select * from users order by name";
-                  $query="SELECT players.playerID, players.playerName, team.team, gamestat.gamedate, playerstat.gameID, playerstat.statID, playerstat.point, playerstat.rb, playerstat.assist, playerstat.blk, playerstat.onfloor, playerstat.playtime FROM team
+                  $query="SELECT players.playerID, players.playerName, team.team, gamestat.gamedate, playerstat.gameID, playerstat.statID, playerstat.point, playerstat.rb, playerstat.assist, playerstat.blk, playerstat.steal, playerstat.playtime FROM team
                           INNER JOIN gamestat ON gamestat.teamID = team.teamID
                           INNER JOIN playerstat ON gamestat.gameID = playerstat.gameID
                           INNER JOIN players on playerstat.playerID = players.playerID 
@@ -383,8 +275,8 @@ input[type=number] {
                       $rb = $row['rb'];
                       $assist = $row['assist'];
                       $blk = $row['blk'];
-                      $onfloor = $row['onfloor'];
-                      $playtime = $row['playtime'];
+                      $steal = $row['steal'];
+                      // $playtime = $row['playtime'];
               ?>
                       <tr>
                           <td style="display:none;"><?php echo $count; ?></td>
@@ -394,28 +286,28 @@ input[type=number] {
                           <!-- <td><div contentEditable='true' class='edit' id='point_<?php echo $id; ?>'><?php echo $point; ?> </div></td> -->
                           <td>
                             <div class="quantity" id='point_<?php echo $id; ?>'>
-                              <input type="number" id='point_<?php echo $id; ?>' value='<?php echo $point; ?>' >
-                            </div>
-                          </td>
-                          <td>
-                            <div class="quantity" id='rb_<?php echo $id; ?>'>
-                              <input type="number" id='rb_<?php echo $id; ?>' value='<?php echo $rb; ?>' >
+                              <input type="number" id='point_<?php echo $id; ?>' value='<?php echo $point; ?>' readonly="readonly">
                             </div>
                           </td>
                           <!-- <td> <div contentEditable='true' class='edit' id='assist_<?php echo $id; ?>'><?php echo $assist; ?> </div> </td> -->
                           <td>
                             <div class="quantity" id='assist_<?php echo $id; ?>'>
-                              <input type="number" id='assist_<?php echo $id; ?>' value='<?php echo $assist; ?>' >
+                              <input type="number" id='assist_<?php echo $id; ?>' value='<?php echo $assist; ?>' readonly="readonly">
+                            </div>
+                          </td>                          
+                          <td>
+                            <div class="quantity" id='steal_<?php echo $id; ?>'>
+                              <input type="number" id='steal_<?php echo $id; ?>' value='<?php echo $steal; ?>' readonly="readonly">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="quantity" id='rb_<?php echo $id; ?>'>
+                              <input type="number" id='rb_<?php echo $id; ?>' value='<?php echo $rb; ?>' readonly="readonly">
                             </div>
                           </td>
                           <td>
                             <div class="quantity" id='blk_<?php echo $id; ?>'>
-                              <input type="number" id='blk_<?php echo $id; ?>' value='<?php echo $blk; ?>' >
-                            </div>
-                          </td>
-                          <td>
-                            <div class="quantity" id='onfloor_<?php echo $id; ?>'>
-                              <input type="number" id='onfloor_<?php echo $id; ?>' value='<?php echo $onfloor; ?>' >
+                              <input type="number" id='blk_<?php echo $id; ?>' value='<?php echo $blk; ?>' readonly="readonly">
                             </div>
                           </td>
                             <!-- <td> <div contentEditable='true' class='clickme' id='playtime_<?php echo $id; ?>'> <?php echo $row['playtime'] ?></div> </td> -->
@@ -428,19 +320,7 @@ input[type=number] {
                               <input name='form-control stopwatch' type="text" value='<?php echo $playtime; ?>'>    
                             </div>
                           </td> -->
-                          <td>
-                            <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
-                              <input id='playtime_<?php echo $id; ?>' name='timer' class='form-control timer-demo' type="text" > 
-                              <!-- <input type='text' name='timer' class='form-control timer-demo' placeholder='0 sec' /> -->
-                              <button type="button" data-set="<?php echo $id; ?>" class="btn btn-primary start-timer-btn btn-xs">Start</button>
-                              <button class='btn btn-primary resume-timer-btn btn-xs hidden'>Resume</button>
-                              <button class='btn pause-timer-btn btn-xs hidden'>Pause</button>
-                              <button class='btn btn-danger reset-timer-btn btn-xs hidden'>Reset Timer</button>
-					<!-- <button class='btn btn-primary resume-timer-btn hidden'>Resume</button>
-					<button class='btn pause-timer-btn hidden'>Pause</button>
-					<button class='btn btn-danger remove-timer-btn hidden'>Remove Timer</button>  -->
-                            </div>
-                          </td>
+                         
                       </tr>
               <?php
                       $count ++;
@@ -449,7 +329,7 @@ input[type=number] {
               </table>
                
           </div> 
-<script>          
+<!-- <script>          
 $(document).ready(function () {
   jQuery('<div class="quantity-nav"><button class="quantity-button quantity-up">+</button><button class="quantity-button quantity-down">-</button></div>').insertAfter('.quantity input');
   jQuery('.quantity').each(function () {
@@ -648,5 +528,5 @@ $('.resume-timer-btn').on('click', function() {
 			// });
 
 });
-</script>
+</script> -->
 
