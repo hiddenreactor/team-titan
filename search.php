@@ -29,9 +29,9 @@ input[type=number] {
   padding-left: 20px;
   border: none;
   /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08); */
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   /* border-radius: 4px; */
-  background: lightyellow;
+  background: white;
   padding-left: 15px;
 }
 
@@ -77,18 +77,23 @@ input[type=number] {
   left: 25px;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.08); */
   font-family: "FontAwesome";
+  font-size: 2rem;
+  font-weight: 1rem;
+  color: white;
   border-radius: 0 4px 4px 0;
   /* line-height: 1.6 */
-  background: #E0FFFF;
+  background: #a9ba9d ;
 }
 
 .quantity-button.quantity-down {
   position: absolute;  
   right: 20px;
   height: 100%;
+  font-size: 2rem;
+  font-weight: 1rem;
   font-family: "FontAwesome";
   border-radius: 4px 0 0 4px;
-  background: #FFEEEE;
+  background: #ffe4e1 ;
 }
 </style>
 
@@ -245,20 +250,21 @@ input[type=number] {
       $date = $row1['gamedate'];
 ?>
 
-<h3 align="center"> Team Titan verse <?php echo $team; ?> on <?php echo $date; ?></h3>
+<h3 align="center"> Player stats on <font color="red"><?php echo $date; ?></font> verse <font color="red"><?php echo $team; ?></font> </h3>
 
 <table width='100%' border='0'>
 			<tr>
-                <th style="display:none;">Game ID</th>
-                  <th style="display:none;">Player ID4</th>
-				<th>Player</th>
-				<th>Verse Team</th>
-				<th>Point</th>
-				<th>Rebound</th>
-				<th>Assist</th>
-				<th>Block</th>
-				<th>On Floor</th>
-                <th>Playtimes</th>
+        <th style="display:none;">Game ID</th>
+        <th style="display:none;"> Player ID4</th>
+        <th width="10%"> &nbsp;Player</th>
+        <!-- <th>Verse Team</th> -->
+        <th width="13%">&nbsp;Point</th> 
+        <th width="13%">&nbsp;Assist</th>                 
+        <th width="13%">&nbsp;Steal</th>
+        <th width="13%">Rebound</th>
+        <th width="13%">&nbsp;Block</th>
+        <th width="10%">&nbsp;Playtimes</th>
+        <th width="10%">&nbsp;Status</th>
 			</tr>
 			<?php
 			$db = new db;
@@ -267,28 +273,23 @@ input[type=number] {
 				$id = $row['statID'];                    
 				$playerid = $row['playerID'];
 				$name = $row['playerName'];
-				$team = $row['team'];
+				// $team = $row['team'];
 				$point = $row['point'];
 				$rb = $row['rb'];
 				$assist = $row['assist'];
 				$blk = $row['blk'];
-				$onfloor = $row['onfloor'];
-                $playtime = $row['playtime'];
+				$steal = $row['steal'];
+        $playtime = $row['playtime'];
                 ?>
 				<tr>
                           <td style="display:none;"><?php echo $count; ?></td>
                           <td style="display:none;"> <div class='edit'><?php echo $playerid; ?></div> </td>
                           <td> <div class='edit' ><?php echo $name; ?></div> </td>
-                          <td> <div class='edit'><?php echo $team; ?> </div> </td>
+                          <!-- <td> <div class='edit'><?php echo $team; ?> </div> </td> -->
                           <!-- <td><div contentEditable='true' class='edit' id='point_<?php echo $id; ?>'><?php echo $point; ?> </div></td> -->
                           <td>
                             <div class="quantity" id='point_<?php echo $id; ?>'>
                               <input type="number" id='point_<?php echo $id; ?>' value='<?php echo $point; ?>' >
-                            </div>
-                          </td>
-                          <td>
-                            <div class="quantity" id='rb_<?php echo $id; ?>'>
-                              <input type="number" id='rb_<?php echo $id; ?>' value='<?php echo $rb; ?>' >
                             </div>
                           </td>
                           <td>
@@ -297,20 +298,34 @@ input[type=number] {
                             </div>
                           </td>
                           <td>
+                            <div class="quantity" id='steal_<?php echo $id; ?>'>
+                              <input type="number" id='steal_<?php echo $id; ?>' value='<?php echo $steal; ?>' >
+                            </div>
+                          </td>
+                          <td>
+                            <div class="quantity" id='rb_<?php echo $id; ?>'>
+                              <input type="number" id='rb_<?php echo $id; ?>' value='<?php echo $rb; ?>' >
+                            </div>
+                          </td>
+                          <td>
                             <div class="quantity" id='blk_<?php echo $id; ?>'>
                               <input type="number" id='blk_<?php echo $id; ?>' value='<?php echo $blk; ?>' >
                             </div>
                           </td>
                           <td>
-                            <div class="quantity" id='onfloor_<?php echo $id; ?>'>
-                              <input type="number" id='onfloor_<?php echo $id; ?>' value='<?php echo $onfloor; ?>' >
+                            <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
+                              <input id='playtime_<?php echo $id; ?>' name='timer' class='form-control timer-demo' type="text" style="font-size:15px;"> 
+                              <button type="button" data-set="<?php echo $id; ?>" class="btn btn-primary start-timer-btn btn-xs">Start</button>
+                              <button class='btn btn-secondary resume-timer-btn btn-xs hidden'>Resume</button>
+                              <button class='btn pause-timer-btn btn-xs hidden'>Pause</button>
+                              <button class='btn btn-danger reset-timer-btn btn-xs hidden'>Reset Timer</button>
                             </div>
                           </td>
                           <td>
                             <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
                               <input id='playtime_<?php echo $id; ?>' name='timer' class='form-control timer-demo' type="text" > 
                               <button type="button" data-set="<?php echo $id; ?>" class="btn btn-primary start-timer-btn btn-xs">Start</button>
-                              <button class='btn btn-primary resume-timer-btn btn-xs hidden'>Resume</button>
+                              <button class='btn btn-secondary resume-timer-btn btn-xs hidden'>Resume</button>
                               <button class='btn pause-timer-btn btn-xs hidden'>Pause</button>
                               <button class='btn btn-danger reset-timer-btn btn-xs hidden'>Reset Timer</button>
                             </div>
