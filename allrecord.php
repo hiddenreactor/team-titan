@@ -324,7 +324,7 @@ input[type=number] {
                             </td> -->
                           <td>
                             <div class="quantity" id='playtime_<?php echo $id; ?>'>
-                              <input type="text" value='<?php echo $playtime; ?>' readonly="readonly">    
+                              <input type="number" id='playtime_<?php echo $id; ?>' value='<?php echo $playtime; ?>' readonly="readonly">
                             </div>
                           </td>                         
                       </tr>
