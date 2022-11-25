@@ -324,7 +324,7 @@ input[type=number] {
                             </td> -->
                           <td>
                             <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
-                              <input name='form-control stopwatch' type="text" value='<?php echo $playtime; ?>'>    
+                              <input name='form-control stopwatch' type="text" value='<?php echo $playtime; ?>' readonly="readonly">    
                             </div>
                           </td>                         
                       </tr>
