@@ -247,8 +247,8 @@ input[type=number] {
               <tr>
                   <th style="display:none;">Game ID</th>
                   <th style="display:none;"> Player ID4</th>
-                  <th> &nbsp;Player</th>
-                  <th>Verse Team</th>
+                  <th width="5%"> &nbsp;Player</th>
+                  <th width="5%">Verse Team</th>
                   <th width="5%">&nbsp;Point</th> 
 		  <th width="5%">&nbsp;Assist</th>                 
 		  <th width="5%">&nbsp;Steal</th>
