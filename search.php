@@ -265,7 +265,7 @@ input[type=number] {
         <th width="5%">&nbsp;Block</th>
         <th width="5%">Turnover</th>
         <th width="10%">&nbsp;Playtimes</th>
-        <th width="10%">&nbsp;Status</th>
+<!--         <th width="10%">&nbsp;Status</th> -->
 			</tr>
 			<?php
 			$db = new db;
@@ -328,7 +328,7 @@ input[type=number] {
                               <button class='btn btn-danger reset-timer-btn btn-xs hidden'>Reset Timer</button>
                             </div>
                           </td>
-                          <td>
+<!--                           <td>
                             <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
                               <input id='playtime_<?php echo $id; ?>' name='timer' class='form-control timer-demo' type="text" > 
                               <button type="button" data-set="<?php echo $id; ?>" class="btn btn-primary start-timer-btn btn-xs">Start</button>
@@ -336,7 +336,7 @@ input[type=number] {
                               <button class='btn pause-timer-btn btn-xs hidden'>Pause</button>
                               <button class='btn btn-danger reset-timer-btn btn-xs hidden'>Reset Timer</button>
                             </div>
-                          </td>
+                          </td> -->
                       </tr>
               <?php
                       $count ++;
