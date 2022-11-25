@@ -255,7 +255,7 @@ input[type=number] {
                   <th>Rebound</th>
                   <th>&nbsp;Block</th>
                   <th>&nbsp;Turnover</th>
-                  <!-- <th>Play Time</th> -->
+                  <th>Play Time</th>
               </tr>
               <?php 
                   // $query = "select * from users order by name";
@@ -278,7 +278,7 @@ input[type=number] {
                       $blk = $row['blk'];
                       $steal = $row['steal'];
 		      $turnover = $row['turnover'];
-                      // $playtime = $row['playtime'];
+                      $playtime = $row['playtime'];
               ?>
                       <tr>
                           <td style="display:none;"><?php echo $count; ?></td>
@@ -322,12 +322,11 @@ input[type=number] {
                               <div class='edit' ><?php echo $playtime; ?> </div> 
                               <input type='time' class='txtedit basic stopwatch' value='<?php echo $playtime; ?>' id='playtime_<?php echo $id; ?>' >
                             </td> -->
-                          <!-- <td>
+                          <td>
                             <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
                               <input name='form-control stopwatch' type="text" value='<?php echo $playtime; ?>'>    
                             </div>
-                          </td> -->
-                         
+                          </td>                         
                       </tr>
               <?php
                       $count ++;
