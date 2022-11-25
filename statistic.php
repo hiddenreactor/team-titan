@@ -33,7 +33,7 @@ $page='stat';
 <div class="container">
       <h3 align="center">New Player Statistic</h3>
       <br />
-      <h5 align="center">update desig.php, allrecord, and search.php to server REPLACED onFloor to block.  Also change allrecord to static display only, no function needed</h5>
+<!--       <h5 align="center">update desig.php, allrecord, and search.php to server REPLACED onFloor to block.  Also change allrecord to static display only, no function needed</h5> -->
       <br />
       <div class="row">
       <form method="post" class="form-horizontal">
