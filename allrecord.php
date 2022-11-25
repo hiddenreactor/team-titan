@@ -277,6 +277,7 @@ input[type=number] {
                       $assist = $row['assist'];
                       $blk = $row['blk'];
                       $steal = $row['steal'];
+		      $turnover = $row['turnover'];
                       // $playtime = $row['playtime'];
               ?>
                       <tr>
