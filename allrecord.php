@@ -249,13 +249,13 @@ input[type=number] {
                   <th style="display:none;"> Player ID4</th>
                   <th> &nbsp;Player</th>
                   <th>Verse Team</th>
-                  <th>&nbsp;Point</th> 
-                  <th>&nbsp;Assist</th>                 
-                  <th>&nbsp;Steal</th>
-                  <th>Rebound</th>
-                  <th>&nbsp;Block</th>
-                  <th>&nbsp;Turnover</th>
-                  <th>Play Time</th>
+                  <th width="5%">&nbsp;Point</th> 
+		  <th width="5%">&nbsp;Assist</th>                 
+		  <th width="5%">&nbsp;Steal</th>
+		  <th width="5%">Rebound</th>
+		  <th width="5%">&nbsp;Block</th>
+		  <th width="5%">Turnover</th>
+		  <th width="10%">&nbsp;Playtimes</th>
               </tr>
               <?php 
                   // $query = "select * from users order by name";
