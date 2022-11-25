@@ -258,11 +258,12 @@ input[type=number] {
         <th style="display:none;"> Player ID4</th>
         <th width="10%"> &nbsp;Player</th>
         <!-- <th>Verse Team</th> -->
-        <th width="13%">&nbsp;Point</th> 
-        <th width="13%">&nbsp;Assist</th>                 
-        <th width="13%">&nbsp;Steal</th>
-        <th width="13%">Rebound</th>
-        <th width="13%">&nbsp;Block</th>
+        <th width="5%">&nbsp;Point</th> 
+        <th width="5%">&nbsp;Assist</th>                 
+        <th width="5%">&nbsp;Steal</th>
+        <th width="5%">Rebound</th>
+        <th width="5%">&nbsp;Block</th>
+        <th width="5%">Turnover</th>
         <th width="10%">&nbsp;Playtimes</th>
         <th width="10%">&nbsp;Status</th>
 			</tr>
@@ -279,7 +280,8 @@ input[type=number] {
 				$assist = $row['assist'];
 				$blk = $row['blk'];
 				$steal = $row['steal'];
-        $playtime = $row['playtime'];
+				$turnover = $row['turnover'];
+        			$playtime = $row['playtime'];
                 ?>
 				<tr>
                           <td style="display:none;"><?php echo $count; ?></td>
@@ -289,12 +291,12 @@ input[type=number] {
                           <!-- <td><div contentEditable='true' class='edit' id='point_<?php echo $id; ?>'><?php echo $point; ?> </div></td> -->
                           <td>
                             <div class="quantity" id='point_<?php echo $id; ?>'>
-                              <input type="number" id='point_<?php echo $id; ?>' value='<?php echo $point; ?>' >
+                              <input type="number" id='point_<?php echo $id; ?>' value='<?php echo $point; ?>' disabled >
                             </div>
                           </td>
                           <td>
                             <div class="quantity" id='assist_<?php echo $id; ?>'>
-                              <input type="number" id='assist_<?php echo $id; ?>' value='<?php echo $assist; ?>' >
+                              <input type="number" id='assist_<?php echo $id; ?>' value='<?php echo $assist; ?>' disabled >
                             </div>
                           </td>
                           <td>
@@ -304,14 +306,19 @@ input[type=number] {
                           </td>
                           <td>
                             <div class="quantity" id='rb_<?php echo $id; ?>'>
-                              <input type="number" id='rb_<?php echo $id; ?>' value='<?php echo $rb; ?>' >
+                              <input type="number" id='rb_<?php echo $id; ?>' value='<?php echo $rb; ?>' disabled >
                             </div>
                           </td>
                           <td>
                             <div class="quantity" id='blk_<?php echo $id; ?>'>
-                              <input type="number" id='blk_<?php echo $id; ?>' value='<?php echo $blk; ?>' >
+                              <input type="number" id='blk_<?php echo $id; ?>' value='<?php echo $blk; ?>' disabled >
                             </div>
                           </td>
+			  <td>
+                            <div class="quantity" id='turnover_<?php echo $id; ?>'>
+                              <input type="number" id='turnover_<?php echo $id; ?>' value='<?php echo $turnover; ?>' disabled>
+                            </div>
+                          </td>		
                           <td>
                             <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
                               <input id='playtime_<?php echo $id; ?>' name='timer' class='form-control timer-demo' type="text" style="font-size:15px;"> 
