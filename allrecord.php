@@ -254,11 +254,12 @@ input[type=number] {
                   <th>&nbsp;Steal</th>
                   <th>Rebound</th>
                   <th>&nbsp;Block</th>
+                  <th>&nbsp;Turnover</th>
                   <!-- <th>Play Time</th> -->
               </tr>
               <?php 
                   // $query = "select * from users order by name";
-                  $query="SELECT players.playerID, players.playerName, team.team, gamestat.gamedate, playerstat.gameID, playerstat.statID, playerstat.point, playerstat.rb, playerstat.assist, playerstat.blk, playerstat.steal, playerstat.playtime FROM team
+                  $query="SELECT players.playerID, players.playerName, team.team, gamestat.gamedate, playerstat.gameID, playerstat.statID, playerstat.point, playerstat.rb, playerstat.assist, playerstat.blk, playerstat.steal, playerstat.playtime, playerstat.turnover FROM team
                           INNER JOIN gamestat ON gamestat.teamID = team.teamID
                           INNER JOIN playerstat ON gamestat.gameID = playerstat.gameID
                           INNER JOIN players on playerstat.playerID = players.playerID 
@@ -310,6 +311,11 @@ input[type=number] {
                               <input type="number" id='blk_<?php echo $id; ?>' value='<?php echo $blk; ?>' readonly="readonly">
                             </div>
                           </td>
+			  <td>
+                            <div class="quantity" id='turnover_<?php echo $id; ?>'>
+                              <input type="number" id='turnover_<?php echo $id; ?>' value='<?php echo $turnover; ?>' readonly="readonly">
+                            </div>
+                          </td>    
                             <!-- <td> <div contentEditable='true' class='clickme' id='playtime_<?php echo $id; ?>'> <?php echo $row['playtime'] ?></div> </td> -->
                             <!-- <td>
                               <div class='edit' ><?php echo $playtime; ?> </div> 
