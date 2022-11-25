@@ -323,7 +323,7 @@ input[type=number] {
                               <input type='time' class='txtedit basic stopwatch' value='<?php echo $playtime; ?>' id='playtime_<?php echo $id; ?>' >
                             </td> -->
                           <td>
-                            <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
+                            <div class="quantity" id='playtime_<?php echo $id; ?>'>
                               <input type="text" value='<?php echo $playtime; ?>' readonly="readonly">    
                             </div>
                           </td>                         
