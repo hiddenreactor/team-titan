@@ -255,7 +255,7 @@ input[type=number] {
 		  <th width="5%">Rebound</th>
 		  <th width="5%">&nbsp;Block</th>
 		  <th width="5%">Turnover</th>
-		  <th width="10%">&nbsp;Playtimes</th>
+		  <th width="10%">&nbsp;&nbsp;&nbsp;Playtimes</th>
               </tr>
               <?php 
                   // $query = "select * from users order by name";
