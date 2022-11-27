@@ -321,7 +321,7 @@ input[type=number] {
                           </td>		
                           <td>
                             <div class="stopwatch" id='playtime_<?php echo $id; ?>'>
-                              <input id='playtime_<?php echo $id; ?>' name='timer' class='form-control timer-demo' type="text" style="font-size:15px;"> 
+                              <input id='playtime_<?php echo $id; ?>' name='timer' class='form-control timer-demo' type="text" style="font-size:15px;" disabled> 
                               <button type="button" data-set="<?php echo $id; ?>" class="btn btn-primary start-timer-btn btn-xs">Start</button>
                               <button class='btn btn-secondary resume-timer-btn btn-xs hidden'>Resume</button>
                               <button class='btn pause-timer-btn btn-xs hidden'>Pause</button>
