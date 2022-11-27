@@ -17,13 +17,14 @@ if(isset($_POST["playername"]))
    ':assist' => 0,
    ':blk' => 0,
    ':steal' => 0,
-   ':playtime' => 0
+   ':playtime' => 0,
+   ':turnover' => 0
   );
 
   $query = "
    INSERT INTO playerstat 
-       (playerID, gameID, point, rb, assist, blk, steal, playtime) 
-       VALUES (:playername, :verse, :point, :rb , :assist, :blk, :steal, :playtime)
+       (playerID, gameID, point, rb, assist, blk, steal, turnover, playtime) 
+       VALUES (:playername, :verse, :point, :rb , :assist, :blk, :steal, :turnover, :playtime)
   ";
 
   $statement = $connect->prepare($query);
